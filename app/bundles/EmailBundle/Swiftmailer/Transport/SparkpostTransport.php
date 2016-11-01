@@ -241,6 +241,7 @@ class SparkpostTransport extends AbstractTokenArrayTransport implements \Swift_T
             $content['text'] = $message['text'];
         }
         
+        // Sparkpost wants reply-to set in content instead of headers
         if (isset($message['replyTo'])) {
             $content['reply_to'] = (!empty($message['replyTo']['name']))
                 ?
